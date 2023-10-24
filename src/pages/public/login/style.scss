@@ -1,0 +1,90 @@
+.login {
+  &-form {
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+  }
+
+  .btn-container {
+    padding-top: 20px;
+  }
+
+  .ant-input {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-size: 16px;
+  }
+
+  .ant-input-password {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-size: 16px;
+  }
+
+  .submit-btn {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    border-radius: 5px;
+    border: none;background-color: #1677FF;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  &__title {
+    font-family: "Poppins";
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 0;
+    margin-top: 50px;
+  }
+
+  &__subinfo {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 10px;
+    p,
+    a {
+      margin-bottom: 0;
+      font-family: "Poppins";
+    }
+  }
+}
+
+.ant-form label {
+  font-family: "Poppins";
+  color: #000000 !important;
+}
+
+@media (max-width: 800px) {
+  .login-form {
+    width: 70%;
+  }
+}
+
+@media (max-width: 600px) {
+  .login-form {
+    width: 90%;
+  }
+}
+
+@media (max-width: 500px) {
+  .login-form {
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 420px) {
+  .login__subinfo {
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+    margin-bottom: 20px;
+    flex-direction: column;
+  }
+}

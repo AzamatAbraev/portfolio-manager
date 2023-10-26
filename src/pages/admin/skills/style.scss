@@ -5,11 +5,12 @@
 
 .skills-title {
   margin-bottom: 0;
-  font-family: 'Poppins';
+  font-family: "Poppins";
 }
 
 .skills-table {
-  td, th {
+  td,
+  th {
     font-family: "Poppins";
   }
 }
@@ -17,9 +18,12 @@
 .search-result-text {
   margin-bottom: 0;
   margin-top: 10px;
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-size: 16px;
   span {
     font-weight: 700;
   }
 }
+
+// Input[type="file"] style //
+

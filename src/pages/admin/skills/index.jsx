@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, memo, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   Button,
@@ -138,6 +138,7 @@ const SkillsPage = () => {
     <Fragment>
       <Table
         className="skills-table"
+        bordered={true}
         scroll={{
           x: 1000,
         }}
@@ -230,4 +231,6 @@ const SkillsPage = () => {
   );
 };
 
-export default SkillsPage;
+const MemoSkillsPage = memo(SkillsPage);
+
+export default MemoSkillsPage;

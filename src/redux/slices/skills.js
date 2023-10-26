@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { request } from "../../server";
 import { message } from "antd";
+
+import { request } from "../../server";
 import { LIMIT } from "../../constants";
 
 const initialState = {

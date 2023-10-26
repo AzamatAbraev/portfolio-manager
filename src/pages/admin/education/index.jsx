@@ -156,6 +156,7 @@ const EducationPage = () => {
     <Fragment>
       <Table
         className="skills-table"
+        bordered={true}
         scroll={{
           x: 1000,
         }}

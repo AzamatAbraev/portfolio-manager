@@ -1,4 +1,7 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { useSelector } from "react-redux";
+
+import { authName } from "./redux/slices/auth";
 import FrontLayout from "./components/layout/front";
 import HomePage from "./pages/public/home";
 import LoginPage from "./pages/public/login";
@@ -9,8 +12,6 @@ import SkillsPage from "./pages/admin/skills";
 import ExperiencePage from "./pages/admin/experience";
 import PortfoliosPage from "./pages/admin/portfolios";
 import UsersPage from "./pages/admin/users";
-import { useSelector } from "react-redux";
-import { authName } from "./redux/slices/auth";
 import EducationPage from "./pages/admin/education";
 import MessagesPage from "./pages/admin/messages";
 

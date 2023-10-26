@@ -1,5 +1,10 @@
 .dashboard-sider {
   height: 100vh !important;
+  background-color: #1677ff !important;
+}
+
+.ant-menu {
+  background-color: #1677ff !important;
 }
 
 .dashboard-logo {
@@ -16,16 +21,31 @@
 }
 
 .dashboard-header {
-  background-color: #001529 !important;
+  background-color: #1677FF !important;
   border-left: 1px solid #fff !important;
+}
+
+.ant-menu-item-selected {
+  // background-color: #001529 !important;
+  border: 1px solid #fff;
 }
 
 .dashboard-header svg {
   fill: #fff;
 }
 
+.ant-menu-item.active {
+  background-color: #1677ff;
+}
+
 .menu {
   a {
-    font-family: 'Poppins';
+    font-family: "Poppins";
+    ::before {
+    }
+  }
+
+  a.active::before {
+    background-color: #001529 !important;
   }
 }

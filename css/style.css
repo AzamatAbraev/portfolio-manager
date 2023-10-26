@@ -1,80 +1,45 @@
-.home-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 70px;
-  padding-top: 50px;
+.dashboard-sider {
+  height: 100vh !important;
+  background-color: #1677ff !important;
 }
-.home-section__info {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+
+.ant-menu {
+  background-color: #1677ff !important;
 }
-.home-section__info h2 {
-  font-size: 46px;
-  font-weight: 700;
-  line-height: 56px;
-}
-.home-section__info p {
-  color: #555;
+
+.dashboard-logo {
+  color: #fff;
+  padding: 24px;
   font-size: 20px;
-  font-weight: 500;
-  line-height: 36px;
-}
-.home-section__img img {
-  width: 100%;
+  width: 200px;
 }
 
-.about-section {
-  margin-bottom: 100px;
-  margin-top: 100px;
-  border-radius: 20px;
-  display: flex;
-  background-color: #EDF7FF;
-}
-.about-section__left {
-  padding: 100px;
-  display: flex;
-  align-items: center;
-}
-.about-section__left h2 {
-  color: #0048ff;
-  font-size: 40px;
-  font-weight: 700;
-  margin-bottom: 0;
-}
-.about-section__right {
-  padding: 100px;
-}
-.about-section__right p {
-  color: #222;
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 40px;
+.dashboard-main {
+  margin: 0 !important;
+  overflow: auto !important;
+  height: calc(100vh - 64px) !important;
 }
 
-@media (max-width: 1000px) {
-  .home-section, .about-section {
-    display: flex;
-    flex-direction: column;
-  }
-  .about-section {
-    align-items: center;
-  }
-  .about-section__left, .about-section__right {
-    padding: 50px;
-  }
+.dashboard-header {
+  background-color: #1677FF !important;
+  border-left: 1px solid #fff !important;
 }
-@media (max-width: 500px) {
-  .home-section {
-    display: flex;
-    flex-direction: column;
-  }
-  .home-section h2 {
-    font-size: 34px;
-    line-height: 48px;
-  }
-  .home-section p {
-    font-size: 18px;
-  }
+
+.ant-menu-item-selected {
+  border: 1px solid #fff;
+}
+
+.dashboard-header svg {
+  fill: #fff;
+}
+
+.ant-menu-item.active {
+  background-color: #1677ff;
+}
+
+.menu a {
+  font-family: "Poppins";
+}
+.menu a.active::before {
+  background-color: #001529 !important;
 }

@@ -1,8 +1,8 @@
-# React + Vite
+This is a website where users can set up their own portfolio specifying following things:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- Experience
+- Skills
+- Projects
+- Education
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+In addition to following the best coding practices in React, this project utilizes Redux, a global state management tool, and its frameworks such as RTK query.

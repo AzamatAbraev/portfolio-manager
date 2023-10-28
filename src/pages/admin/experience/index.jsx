@@ -162,7 +162,7 @@ const ExperiencePage = () => {
         bordered={true}
         title={() => (
           <Fragment>
-            <Flex align="center" justify="space-between" gap={36}>
+            <Flex className="table-title2" align="center" justify="space-between" gap={36}>
               <h1 className="skills-title">Experience</h1>
               <Input
                 className="search-input"

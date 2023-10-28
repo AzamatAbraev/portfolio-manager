@@ -4,13 +4,52 @@
 }
 
 .admin {
-  color: #28A745;
+  color: #28a745;
 }
 
 .client {
-  color: #007BFF;
+  color: #007bff;
 }
 
 .user {
   color: #000000;
+}
+
+.skills-title {
+  text-transform: capitalize;
+}
+
+.table-title {
+  display: flex;
+}
+
+@media (max-width: 600px) {
+  .table-title {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+
+    .search-input {
+      width: 100%;
+      margin: 0 !important;
+    }
+  }
+
+  .table-title2 {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+
+    .search-input {
+      width: 100% !important;
+    }
+    
+    gap: 10px !important;
+  }
+}
+
+@media (max-width: 450px) {
+  .table-title {
+    grid-template-columns: 1fr;
+  }
 }

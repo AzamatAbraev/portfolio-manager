@@ -47,6 +47,13 @@ const usersQuery = createApi({
         body,
       }),
     }),
+    upgradeUser: builder.mutation({
+      query: ({id, values}) => ({
+        method: "PUT",
+        url: `users/${id}`,
+        body: values,
+      })
+    }),
     deleteUser: builder.mutation({
       query: (id) => ({
         method: "DELETE",
@@ -68,4 +75,4 @@ const { reducer: usersReducer, reducerPath: usersName } =
 
 export { usersQuery as default, usersReducer, usersName };
 
-export const {useGetUsersQuery, useCreateUserMutation, useGetUserMutation, useUpdateUserMutation, useDeleteUserMutation, useUploadPhotoMutation} = usersQuery;
+export const {useGetUsersQuery, useCreateUserMutation, useGetUserMutation, useUpdateUserMutation, useDeleteUserMutation, useUploadPhotoMutation, useUpgradeUserMutation} = usersQuery;

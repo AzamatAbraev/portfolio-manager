@@ -6,6 +6,7 @@ import {
   Input,
   Modal,
   Pagination,
+  Select,
   Space,
   Table,
 } from "antd";
@@ -17,7 +18,6 @@ import {
   useGetUserMutation,
   useGetUsersQuery,
   useUpdateUserMutation,
-  // useUploadPhotoMutation,
 } from "../../../redux/queries/users";
 
 import { LIMIT } from "../../../constants";
@@ -32,16 +32,15 @@ const UsersPage = () => {
   const [selected, setSelected] = useState(null);
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
-  // const [photo, setPhoto] = useState(null);
+  const [role, setRole] = useState("user");
   const [isModalLoading, setIsModalLoading] = useState(false);
 
   const {
     data: { users, total } = { users: [], total: 0 },
     isFetching,
     refetch,
-  } = useGetUsersQuery({ page, search, limit: LIMIT });
+  } = useGetUsersQuery({ page, search, limit: LIMIT, role });
 
-  // const [uploadPhoto] = useUploadPhotoMutation();
   const [createUser] = useCreateUserMutation();
   const [getUser] = useGetUserMutation();
   const [updateUser] = useUpdateUserMutation();
@@ -50,7 +49,6 @@ const UsersPage = () => {
   const showModal = async () => {
     form.resetFields();
     setIsModalOpen(true);
-    // setPhoto(null);
     setSelected(null);
   };
 
@@ -80,7 +78,6 @@ const UsersPage = () => {
     setSelected(id);
     setIsModalOpen(true);
     const { data } = await getUser(id);
-    // setPhoto(data?.photo);
     form.setFieldsValue(data);
   };
 
@@ -90,17 +87,14 @@ const UsersPage = () => {
     setPage(1);
   };
 
+  const filterUsers = (value) => {
+    setRole(value);
+  };
+
   const handleSearch = (e) => {
     setSearch(e.target.value);
     setPage(1);
   };
-
-  // const uploadImage = async (e) => {
-  //   const formData = new FormData();
-  //   formData.append("file", e.target.files[0]);
-  //   const { data } = await uploadPhoto(formData);
-  //   setPhoto(data);
-  // };
 
   const columns = [
     {
@@ -193,14 +187,39 @@ const UsersPage = () => {
         bordered={true}
         title={() => (
           <Fragment>
-            <Flex align="center" justify="space-between" gap={36}>
-              <h1 className="skills-title">Users</h1>
+            <Flex
+              className="table-title"
+              align="center"
+              justify="space-between"
+            >
+              <h1 className="skills-title">{role}s</h1>
               <Input
                 className="search-input"
                 value={search}
                 onChange={handleSearch}
-                style={{ width: "auto", flexGrow: 1 }}
+                style={{
+                  width: "auto",
+                  flexGrow: 1,
+                  marginRight: "30px",
+                  marginLeft: "30px",
+                }}
                 placeholder="Searching..."
+              />
+              <Select
+                defaultValue="user"
+                onChange={filterUsers}
+                style={{ width: 120, marginRight: "20px" }}
+                options={[
+                  {
+                    value: "user",
+                    label: "User",
+                  },
+                  { value: "admin", label: "Admin" },
+                  {
+                    value: "client",
+                    label: "Client",
+                  },
+                ]}
               />
               <Button onClick={showModal} type="dashed">
                 Add user
@@ -208,7 +227,7 @@ const UsersPage = () => {
             </Flex>
             <div>
               <p className="search-result-text">
-                About <span>{total}</span> results match
+                About <span>{total}</span> {role}s found
               </p>
             </div>
           </Fragment>
@@ -285,18 +304,20 @@ const UsersPage = () => {
             <Input />
           </Form.Item>
 
-          {selected === null ? <Form.Item
-            label="Password"
-            name="password"
-            rules={[
-              {
-                required: true,
-                message: "Please include your password",
-              },
-            ]}
-          >
-            <Input.Password />
-          </Form.Item> : null}
+          {selected === null ? (
+            <Form.Item
+              label="Password"
+              name="password"
+              rules={[
+                {
+                  required: true,
+                  message: "Please include your password",
+                },
+              ]}
+            >
+              <Input.Password />
+            </Form.Item>
+          ) : null}
 
           <Form.Item label="Address" name="address">
             <Input />
@@ -319,18 +340,6 @@ const UsersPage = () => {
               <input className="date-picker" type="date" />
             </Form.Item>
           </Flex>
-
-          {/* <div>
-            <label htmlFor="image">Upload an image</label>
-            <input
-              style={{ marginTop: "10px" }}
-              className="upload-btn"
-              id="image"
-              type="file"
-              onChange={uploadImage}
-            />
-            {photo ? <Image src={getImage(photo)} /> : null}
-          </div> */}
         </Form>
       </Modal>
     </Fragment>

@@ -14,6 +14,10 @@ import PortfoliosPage from "./pages/admin/portfolios";
 import UsersPage from "./pages/admin/users";
 import EducationPage from "./pages/admin/education";
 import MessagesPage from "./pages/admin/messages";
+import AccountPage from "./pages/public/account";
+import NotFoundPage from "./pages/public/not-found";
+import Cookies from "js-cookie";
+import { TOKEN } from "./constants";
 
 function App() {
   const { isAuthenticated, user } = useSelector((state) => state[authName]);
@@ -24,6 +28,10 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
+          <Route
+            path="/account"
+            element={(Cookies.get(TOKEN)) ? <AccountPage /> : <Navigate to="/" />}
+          />
         </Route>
         <Route
           element={
@@ -42,6 +50,7 @@ function App() {
           <Route path="/users" element={<UsersPage />} />
           <Route path="/messages" element={<MessagesPage />} />
         </Route>
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   );

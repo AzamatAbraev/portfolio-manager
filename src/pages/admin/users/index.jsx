@@ -60,7 +60,6 @@ const UsersPage = () => {
     try {
       setIsModalLoading(true);
       const values = await form.validateFields();
-      // values.photo = photo?._id;
       if (selected === null) {
         await createUser(values);
       } else {

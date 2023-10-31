@@ -1,0 +1,64 @@
+.account-image {
+  width: 100%;
+  padding: 30px;
+  border: 1px solid #000;
+  width: 310px !important;
+  height: 300px !important;
+  object-fit: cover;
+  object-position: center;
+}
+
+.upload-image-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-input {
+  width: 70%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  text-align: center;
+}
+
+.reset-password {
+  width: 60%;
+  margin-top: 10px;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
+  margin-left: auto;
+
+}
+
+.register-date-picker {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.password-input {
+  input,
+  label {
+    width: 100%;
+  }
+
+  input {
+    padding: 6px 6px;
+    border: 1px solid #D9D9D9;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-size: 16px;
+    :focus {
+      outline: none;
+    }
+  }
+}
+
+.register {
+  padding-bottom: 100px;
+}

@@ -62,7 +62,7 @@ const AccountPage = () => {
     };
 
     try {
-      await request.put("/auth/updatepassword", newPassword);
+      await request.put("auth/updatepassword", newPassword);
       setShowForm(false);
       message.success("Password changed successfully");
     } catch (err) {

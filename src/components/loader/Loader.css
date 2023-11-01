@@ -48,21 +48,21 @@
 
 .ldio-8rd9lrgkhy5 div:nth-child(1) {
   left: 35px;
-  background: #e15b64;
+  background: #1677ff;
   animation: ldio-8rd9lrgkhy5-1 1s cubic-bezier(0, 0.5, 0.5, 1) infinite;
   animation-delay: -0.2s;
 }
 
 .ldio-8rd9lrgkhy5 div:nth-child(2) {
   left: 85px;
-  background: #f8b26a;
+  background: #1677ff;
   animation: ldio-8rd9lrgkhy5-2 1s cubic-bezier(0, 0.5, 0.5, 1) infinite;
   animation-delay: -0.1s;
 }
 
 .ldio-8rd9lrgkhy5 div:nth-child(3) {
   left: 135px;
-  background: #abbd81;
+  background: #1677ff;
   animation: ldio-8rd9lrgkhy5-3 1s cubic-bezier(0, 0.5, 0.5, 1) infinite;
   animation-delay: undefineds;
 }

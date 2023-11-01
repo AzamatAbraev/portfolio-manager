@@ -13,10 +13,13 @@ import { getUserImage } from "../../../utils/getImage";
 import "./style.scss";
 import { TOKEN, USER } from "../../../constants";
 import Cookies from "js-cookie";
+import { useDispatch } from "react-redux";
+import { removeAuth } from "../../../redux/slices/auth";
 
 const AccountPage = () => {
   const navigate = useNavigate();
   const [form] = Form.useForm();
+  const dispatch = useDispatch();
 
   const [photo, setPhoto] = useState(null);
   const [showForm, setShowForm] = useState(false);
@@ -46,7 +49,7 @@ const AccountPage = () => {
   const logout = () => {
     Cookies.remove(TOKEN);
     localStorage.removeItem(USER);
-    refetch();
+    dispatch(removeAuth());
     navigate("/");
   };
 

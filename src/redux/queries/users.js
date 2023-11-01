@@ -34,6 +34,18 @@ const usersQuery = createApi({
         birthday: res.birthday?.split("T")[0],
       }),
     }),
+    getClientUsers: builder.mutation({
+      query: () => ({
+        method: "GET",
+        url: "/users?role=client",
+      }),
+    }),
+    getNonClientUsers: builder.mutation({
+      query: () => ({
+        method: "GET",
+        url: "/users?role=role",
+      }),
+    }),
     createUser: builder.mutation({
       query: (body) => ({
         method: "POST",
@@ -49,11 +61,11 @@ const usersQuery = createApi({
       }),
     }),
     upgradeUser: builder.mutation({
-      query: ({id, values}) => ({
+      query: ({ id, values }) => ({
         method: "PUT",
         url: `users/${id}`,
         body: values,
-      })
+      }),
     }),
     deleteUser: builder.mutation({
       query: (id) => ({
@@ -76,4 +88,4 @@ const { reducer: usersReducer, reducerPath: usersName } =
 
 export { usersQuery as default, usersReducer, usersName };
 
-export const {useGetUsersQuery, useCreateUserMutation, useGetUserMutation, useUpdateUserMutation, useDeleteUserMutation, useUploadPhotoMutation, useUpgradeUserMutation} = usersQuery;
+export const {useGetUsersQuery, useCreateUserMutation, useGetUserMutation, useUpdateUserMutation, useDeleteUserMutation, useUploadPhotoMutation, useUpgradeUserMutation, useGetClientUsersMutation, useGetNonClientUsersMutation} = usersQuery;

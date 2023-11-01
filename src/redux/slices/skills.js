@@ -83,3 +83,4 @@ const skillSlice = createSlice({
 const { name, reducer: skillReducer } = skillSlice;
 
 export { name as skillName, skillReducer as default };
+
